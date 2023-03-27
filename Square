@@ -9,7 +9,24 @@ public class Square extends Rectangle{
     public Square(double width, double length, String color, boolean filled) {
         super(width, length, color, filled);
     }
-    public double getSide(){
-        return
+    public void setSide(double n){
+        super.setLength(n);
+        super.setWidth(n);
+    }
+    public void setWidth(double n) {
+        super.setWidth(n);
+    }
+    public void setLenght(double n) {
+        super.setLength(n);
+    }
+
+    // menurut saya getArea() dan getPerimeter() tidak usah di override, karena kita tetap bisa menggunakan method tersebut
+    // untuk mencari luas dan keliling dari persegi. jika semisal class yang di gunakan bukan persegi, tetapi segitiga, maka
+    // kita harus mengoverride ke 2 method tersebut.
+
+    @Override
+    public String toString() {
+        return "Square dengan side : " + getWidth() + ", dan luas : " + getArea() + "adalah subclass dari " + super.toString();
+    }
 }
-}
+
